@@ -21,8 +21,24 @@ public class UtenteDao extends BaseDao {
 		 * 2 = Email già esistente
 		 */
 		int esito = 0;
-		
 		getConnection();
+		Statement statement = connection.createStatement();
+		
+		String query = "INSERT INTO utente(email,password) VALUES('" +  email + "','" + psw + "')";
+		
+		try {
+			statement.executeUpdate(query);
+			statement.close();
+			statement.close();
+			connection.close(); 
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+			esito = 0;
+			return esito;
+		}
+		
+		
 		
 		return esito;
 		
