@@ -37,9 +37,7 @@ public class UtenteDao extends BaseDao {
 			esito = 0;
 			return esito;
 		}
-		
-		
-		
+			
 		return esito;
 		
 	}
