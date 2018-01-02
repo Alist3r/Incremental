@@ -1,10 +1,12 @@
 ------------------ DA FARE -------------------
 
 
-Criptare password in registrazione
+Migliare gestione redirect servlet
 
 
 ------------------ FATTO -------------------
 
 02/01/18 Sistemare registrazione
 02/01/18 Cambiare attributo "email" (tab utente) in "username")
+02/01/18 Criptare password in registrazione
+02/01/18 Implementare Logout

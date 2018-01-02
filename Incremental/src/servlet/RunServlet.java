@@ -17,7 +17,5 @@ public class RunServlet extends BaseServlet {
 		String url = Procedure.creaUrltoPage("redirect");
 		request.getRequestDispatcher(url).forward(request, response);
 		
-	
-	
 	}
 }

@@ -9,10 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.jasypt.util.password.BasicPasswordEncryptor;
 
-import oggetti.*;
-import utility.Costanti;
-import utility.Procedure;
 import dao.UtenteDao;
+import oggetti.Utente;
+import utility.Costanti;
 
 @SuppressWarnings("serial")
 public class LoginServlet extends BaseServlet {
@@ -55,10 +54,8 @@ public class LoginServlet extends BaseServlet {
 			messaggio = "Utente non trovato";
 			request.getSession().setAttribute(Costanti.ATTR_MSG, messaggio);
 		}
-		
-		request.getSession().setAttribute("toPage", toPage);
-		String url = Procedure.creaUrltoPage("redirect");
-		request.getRequestDispatcher(url).forward(request, response);
+				
+		toRedirectPage(request, response, toPage);
 	
 	}
 }

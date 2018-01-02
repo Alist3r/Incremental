@@ -8,11 +8,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.jasypt.util.password.BasicPasswordEncryptor;
+
 import dao.UtenteDao;
 import utility.Costanti;
-import utility.Procedure;
-
-import org.jasypt.util.password.BasicPasswordEncryptor;
 
 @SuppressWarnings("serial")
 public class EseguiRegistraServlet extends BaseServlet {
@@ -28,7 +27,6 @@ public class EseguiRegistraServlet extends BaseServlet {
 		
 		//Prendo i parametri dalla request
 		String username = request.getParameter("email");
-
 		String psw = request.getParameter("psw");
 		
 		UtenteDao utenteDao;
@@ -70,9 +68,7 @@ public class EseguiRegistraServlet extends BaseServlet {
 		}
 		
 		request.getSession().setAttribute(Costanti.ATTR_MSG, messaggio);
-		request.getSession().setAttribute("toPage", toPage);
-		String url = Procedure.creaUrltoPage("redirect");
-		request.getRequestDispatcher(url).forward(request, response);
+		toRedirectPage(request, response, toPage);
 	
 	}
 }
