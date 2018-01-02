@@ -43,14 +43,13 @@ public class UtenteDao extends BaseDao {
 		
 	}
 	
-	public Utente getDaUsernameEPassword(String username, String password) throws ClassNotFoundException, SQLException
+	public Utente getDaUsername(String username) throws ClassNotFoundException, SQLException
 	{
 		Utente account = null;
 		getConnection();
 
 		String 	query  = "SELECT * FROM utente ";
 				query += "WHERE username='" + username + "'";
-				query += "AND password='" + password + "'";
 
 		Statement statement = connection.createStatement();
 		ResultSet result=statement.executeQuery(query);

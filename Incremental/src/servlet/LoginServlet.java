@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.jasypt.util.password.BasicPasswordEncryptor;
+
 import oggetti.*;
 import utility.Costanti;
 import utility.Procedure;
@@ -21,7 +23,7 @@ public class LoginServlet extends BaseServlet {
 		Boolean loggato = false;
 		
 		//Prendo i parametri dalla request
-		String email = request.getParameter("email");
+		String username = request.getParameter("email");
 		String psw = request.getParameter("psw");
 		
 		UtenteDao utenteDao;
@@ -29,15 +31,18 @@ public class LoginServlet extends BaseServlet {
 		try {
 			//carico il dao e provo a cercare la combinazione email + password
 			utenteDao = new UtenteDao();
-			utente = utenteDao.getDaUsernameEPassword(email, psw);
-		}  catch (ClassNotFoundException | SQLException e) {
+			utente = utenteDao.getDaUsername(username);
+					
+		}  
+		catch (ClassNotFoundException | SQLException e) {
 			loggato = false;
 			e.printStackTrace();
 		}	
 		
+		BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
 		String toPage = "";
 		String messaggio = "";
-		if (utente != null) {
+		if (utente != null && passwordEncryptor.checkPassword(psw, utente.getPassword())) {
 			//se l'oggetto utente non è null allora ho trovato la combinazione di parametri e quindi eseguo il login
 			loggato = true;
 			request.getSession().setAttribute(Costanti.ATTR_LOGGATO, loggato);

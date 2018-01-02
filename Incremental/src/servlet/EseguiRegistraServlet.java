@@ -1,5 +1,6 @@
 package servlet;
 
+
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import dao.UtenteDao;
 import utility.Costanti;
 import utility.Procedure;
+
+import org.jasypt.util.password.BasicPasswordEncryptor;
 
 @SuppressWarnings("serial")
 public class EseguiRegistraServlet extends BaseServlet {
@@ -25,10 +28,14 @@ public class EseguiRegistraServlet extends BaseServlet {
 		
 		//Prendo i parametri dalla request
 		String username = request.getParameter("email");
+
 		String psw = request.getParameter("psw");
 		
 		UtenteDao utenteDao;
 		String usernameTrovato = null;
+		
+		BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
+		String encryptedPassword = passwordEncryptor.encryptPassword(psw);
 		
 		try {
 			utenteDao = new UtenteDao();
@@ -38,7 +45,7 @@ public class EseguiRegistraServlet extends BaseServlet {
 				registrato = 2;
 			}
 			else {
-				registrato = utenteDao.inserisciUtente(username,psw);
+				registrato = utenteDao.inserisciUtente(username,encryptedPassword);
 			}
 		}
 		catch (ClassNotFoundException | SQLException e) {
