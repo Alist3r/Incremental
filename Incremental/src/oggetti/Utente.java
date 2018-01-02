@@ -7,7 +7,7 @@ public class Utente implements Serializable{
 	private static final long serialVersionUID = -6712649409791035393L;
 	
 	private int idUtente = 0;
-	private String 	email = "";
+	private String 	username = "";
 	private String 	password = "";
 	private int 	tempoGioco = 0;
 	
@@ -21,13 +21,13 @@ public class Utente implements Serializable{
 	public void setIdUtente(int idUtente) {
 		this.idUtente = idUtente;
 	}
-
-	public String getEmail() {
-		return email;
+	
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {

@@ -49,6 +49,8 @@
 					}
 					else {
 						var url = "/Incremental/eseguiregistra?email=" + email + "&psw=" +psw;
+						window.location.href = url;
+			            return false;
 					}
 				}
 				

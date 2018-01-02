@@ -1,6 +1,10 @@
 ------------------ DA FARE -------------------
 
-Sistemare registrazione
+
 Criptare password in registrazione
 
+
 ------------------ FATTO -------------------
+
+02/01/18 Sistemare registrazione
+02/01/18 Cambiare attributo "email" (tab utente) in "username")

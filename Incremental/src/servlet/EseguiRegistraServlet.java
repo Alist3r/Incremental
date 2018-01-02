@@ -7,10 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import oggetti.*;
+import dao.UtenteDao;
 import utility.Costanti;
 import utility.Procedure;
-import dao.UtenteDao;
 
 @SuppressWarnings("serial")
 public class EseguiRegistraServlet extends BaseServlet {
@@ -20,40 +19,50 @@ public class EseguiRegistraServlet extends BaseServlet {
 		
 		/* 0 = Non registrato
 		 * 1 = Registrato
-		 * 2 = Email già esistente
+		 * 2 = Username già esistente
 		 */
 		int registrato = 0;
 		
 		//Prendo i parametri dalla request
-		String email = request.getParameter("email");
+		String username = request.getParameter("email");
 		String psw = request.getParameter("psw");
 		
 		UtenteDao utenteDao;
-		Utente utente = null;
+		String usernameTrovato = null;
+		
 		try {
-			//carico il dao e provo a cercare la combinazione email + password
 			utenteDao = new UtenteDao();
-			registrato = utenteDao.inserisciUtente(email,psw);
-		}  catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
+			usernameTrovato = utenteDao.trovaUsername(username);
+			
+			if (usernameTrovato != null) {
+				registrato = 2;
+			}
+			else {
+				registrato = utenteDao.inserisciUtente(username,psw);
+			}
+		}
+		catch (ClassNotFoundException | SQLException e) {
+			registrato = 0;
+			e.printStackTrace();	
 		}	
 		
 		String toPage = "";
 		String messaggio = "";
-		if (utente != null) {
-			//se l'oggetto utente non è null allora ho trovato la combinazione di parametri e quindi eseguo il login
-			loggato = true;
-			request.getSession().setAttribute(Costanti.ATTR_LOGGATO, loggato);
-			request.getSession().setAttribute(Costanti.ATTR_UTENTE, utente);
-			toPage = "run";
+		if (registrato == 1) {
+			toPage = "home";
+			messaggio = "Registrazione Effettuata";
+			
 		}
 		else {
-			//altrimento torno nella home senza eseguire il login
-			toPage = "home";
-			messaggio = "Utente non trovato";
-			request.getSession().setAttribute(Costanti.ATTR_MSG, messaggio);
+			toPage = "registrazione";
+			if (registrato == 2)			
+				messaggio = "Username Esistente";
+			
+			else 
+				messaggio = "Registrazione non effettuata";				
 		}
 		
+		request.getSession().setAttribute(Costanti.ATTR_MSG, messaggio);
 		request.getSession().setAttribute("toPage", toPage);
 		String url = Procedure.creaUrltoPage("redirect");
 		request.getRequestDispatcher(url).forward(request, response);

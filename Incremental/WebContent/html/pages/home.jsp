@@ -66,7 +66,7 @@
 		</div>
   		<div class="div-login">
   			<p class="corsivo" style="font-size: 25px;margin: 3px;">Attraversa il portale</p>
-  			<input type="email" id="email" placeholder="E-Mail" class="input-base"> 
+  			<input type="email" id="email" placeholder="Username" class="input-base"> 
   			<input type="password" id="psw" placeholder="Password" class="input-base"> 
   			<p class="mess-errore"><% if(messaggio != null) { %>  <%= messaggio %> <% session.setAttribute(Costanti.ATTR_MSG, null); } %>  </p>
   			<a class="a-base" id="buttonLogin">Login</a>

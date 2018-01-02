@@ -44,7 +44,7 @@
   	<body>
   	
   		<jsp:include page="header/header.jsp"></jsp:include>
-  		Email: <%= utente.getEmail() %>
+  		Email: <%= utente.getUsername() %>
   		Id: <%= utente.getIdUtente() %> 
 
    	</body>
