@@ -4,7 +4,7 @@
 
 <dwr>
   <allow>
-  	<convert match="business.*" converter="bean"/>
+  	<convert match="oggetti.*" converter="bean"/>
   	<convert match="java.lang.Exception" converter="exception"/> 
     <create creator="new" javascript="CCService">
       <param name="class" value="dwr.CCServiceDWR"/>

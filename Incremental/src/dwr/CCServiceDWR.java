@@ -1,13 +1,8 @@
 package dwr;
 
-import java.sql.SQLException;
-
-/*import dao.UserDao;
-
-
 public class CCServiceDWR {
 
-	public boolean findUsername(String username) throws SQLException, ClassNotFoundException {
+	/*public boolean findUsername(String username) throws SQLException, ClassNotFoundException {
 		UserDao userDao = new UserDao();
 		boolean find = userDao.findUserByUsername(username);
 		
@@ -28,5 +23,5 @@ public class CCServiceDWR {
 
 		return exist;
 		
-	}
-}*/
+	}*/
+}

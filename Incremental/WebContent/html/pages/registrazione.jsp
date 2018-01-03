@@ -28,8 +28,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Marck+Script|Yellowtail" rel="stylesheet">
 	<link href="<%=Costanti.CONTEXT_PATH%>/css/custom.css" rel="stylesheet" media="screen">
     
-    <script type='text/javascript' src='/LoLChampCreator/dwr/interface/CCService.js'></script>
-  	<script type='text/javascript' src='/LoLChampCreator/dwr/engine.js'></script>
+   	<script type='text/javascript' src='/Incremental/dwr/engine.js'></script>
+  	<script type='text/javascript' src='/Incremental/dwr/interface/CCService.js'></script>
     <script src="http://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	

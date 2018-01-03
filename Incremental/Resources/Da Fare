@@ -1,12 +1,15 @@
 ------------------ DA FARE -------------------
 
 
-Migliare gestione redirect servlet
+
 
 
 ------------------ FATTO -------------------
+
+03/01/18 Miglioare gestione redirect servlet
 
 02/01/18 Sistemare registrazione
 02/01/18 Cambiare attributo "email" (tab utente) in "username")
 02/01/18 Criptare password in registrazione
 02/01/18 Implementare Logout
+
