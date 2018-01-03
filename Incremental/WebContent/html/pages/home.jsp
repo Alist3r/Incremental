@@ -2,6 +2,7 @@
 <%@page import="java.util.Enumeration"%>
 <%@page import="java.util.Vector"%>
 <%@page import="oggetti.*"%>
+<%@page import="oggetti.utili.*"%>
 <%@page import="utility.*"%>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="true"%>
 
@@ -11,7 +12,7 @@
 	session = request.getSession();
 
 	Boolean logged = (Boolean) session.getAttribute(Costanti.ATTR_LOGGATO);
-	String messaggio = (String) session.getAttribute(Costanti.ATTR_MSG);
+	Messaggio messaggio = (Messaggio) session.getAttribute(Costanti.ATTR_MSG);
 		
 	if(logged != null && logged == true) {
 		session.setAttribute("toPage", "run");
@@ -68,7 +69,10 @@
   			<p class="corsivo" style="font-size: 25px;margin: 3px;">Attraversa il portale</p>
   			<input type="email" id="email" placeholder="Username" class="input-base"> 
   			<input type="password" id="psw" placeholder="Password" class="input-base"> 
-  			<p class="mess-errore"><% if(messaggio != null) { %>  <%= messaggio %> <% session.setAttribute(Costanti.ATTR_MSG, null); } %>  </p>
+  			<% if(messaggio != null) { %>
+					<p class="messaggio" style="color:<%= messaggio.getColore() %>">  <%= messaggio.getMsg() %>   </p>
+  			<% 		session.setAttribute(Costanti.ATTR_MSG, null); 
+ 				} %>
   			<a class="a-base" id="buttonLogin">Login</a>
   		</div>
   		

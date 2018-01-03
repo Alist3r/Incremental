@@ -8,4 +8,7 @@ public class Costanti {
 	public static final String ATTR_LOGGATO = "loggato";
 	public static final String ATTR_UTENTE = "utente";
 	public static final String ATTR_MSG = "messaggio";
+	
+	public static final String COLOR_VERDE = "#00cc0a";
+	public static final String COLOR_ROSSO = "#e70000";
 }

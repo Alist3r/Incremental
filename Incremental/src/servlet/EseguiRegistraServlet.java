@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.jasypt.util.password.BasicPasswordEncryptor;
 
 import dao.UtenteDao;
+import oggetti.utili.Messaggio;
 import utility.Costanti;
 
 @SuppressWarnings("serial")
@@ -32,18 +33,19 @@ public class EseguiRegistraServlet extends BaseServlet {
 		UtenteDao utenteDao;
 		String usernameTrovato = null;
 		
+		//Crypt della password
 		BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
 		String encryptedPassword = passwordEncryptor.encryptPassword(psw);
 		
 		try {
 			utenteDao = new UtenteDao();
-			usernameTrovato = utenteDao.trovaUsername(username);
+			usernameTrovato = utenteDao.trovaUsername(username); //Verifico se l'username è stato già utilizzato
 			
-			if (usernameTrovato != null) {
+			if (usernameTrovato != null) { //Se trovo un username uguale nel DB
 				registrato = 2;
 			}
 			else {
-				registrato = utenteDao.inserisciUtente(username,encryptedPassword);
+				registrato = utenteDao.inserisciUtente(username,encryptedPassword); //Altrimenti eseguo l'inserimeonto dei dati sul DB
 			}
 		}
 		catch (ClassNotFoundException | SQLException e) {
@@ -52,22 +54,20 @@ public class EseguiRegistraServlet extends BaseServlet {
 		}	
 		
 		String toPage = "";
-		String messaggio = "";
-		if (registrato == 1) {
+		Messaggio msg;
+		if (registrato == 1) { //Se la registrazione è andata a buon fine
 			toPage = "home";
-			messaggio = "Registrazione Effettuata";
-			
+			msg = new Messaggio("Registrazione Effettuata", Costanti.COLOR_VERDE);		
 		}
 		else {
 			toPage = "registrazione";
-			if (registrato == 2)			
-				messaggio = "Username Esistente";
-			
+			if (registrato == 2) 	
+				msg = new Messaggio("Username già Esistente", Costanti.COLOR_ROSSO);
 			else 
-				messaggio = "Registrazione non effettuata";				
+				msg = new Messaggio("Registrazione non Effettuata", Costanti.COLOR_ROSSO);
 		}
 		
-		request.getSession().setAttribute(Costanti.ATTR_MSG, messaggio);
+		request.getSession().setAttribute(Costanti.ATTR_MSG, msg);
 		toRedirectPage(request, response, toPage);
 	
 	}

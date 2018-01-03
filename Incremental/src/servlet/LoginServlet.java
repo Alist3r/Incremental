@@ -11,6 +11,7 @@ import org.jasypt.util.password.BasicPasswordEncryptor;
 
 import dao.UtenteDao;
 import oggetti.Utente;
+import oggetti.utili.Messaggio;
 import utility.Costanti;
 
 @SuppressWarnings("serial")
@@ -40,7 +41,7 @@ public class LoginServlet extends BaseServlet {
 		
 		BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
 		String toPage = "";
-		String messaggio = "";
+		Messaggio msg = null;
 		if (utente != null && passwordEncryptor.checkPassword(psw, utente.getPassword())) {
 			//se l'oggetto utente non è null allora ho trovato la combinazione di parametri e quindi eseguo il login
 			loggato = true;
@@ -51,8 +52,8 @@ public class LoginServlet extends BaseServlet {
 		else {
 			//altrimento torno nella home senza eseguire il login
 			toPage = "home";
-			messaggio = "Utente non trovato";
-			request.getSession().setAttribute(Costanti.ATTR_MSG, messaggio);
+			msg = new Messaggio("Utente non trovato",Costanti.COLOR_ROSSO);
+			request.getSession().setAttribute(Costanti.ATTR_MSG, msg);
 		}
 				
 		toRedirectPage(request, response, toPage);

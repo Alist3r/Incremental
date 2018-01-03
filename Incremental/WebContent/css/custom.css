@@ -55,7 +55,6 @@ body,input {
 	cursor: pointer;
 }
 
-.mess-errore {
+.messaggio {
 	font-size: 13px;
-	color: red;
 }

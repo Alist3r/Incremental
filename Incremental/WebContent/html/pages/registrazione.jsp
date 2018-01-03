@@ -3,6 +3,7 @@
 <%@page import="java.util.Vector"%>
 <%@page import="oggetti.*"%>
 <%@page import="utility.*"%>
+<%@page import="oggetti.utili.*"%>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" session="true"%>
 
 <!DOCTYPE html>
@@ -11,7 +12,7 @@
 	session = request.getSession();
 
 	Boolean logged = (Boolean) session.getAttribute(Costanti.ATTR_LOGGATO);
-	String messaggio = (String) session.getAttribute(Costanti.ATTR_MSG);
+	Messaggio messaggio = (Messaggio) session.getAttribute(Costanti.ATTR_MSG);
 	
 	if(logged != null && logged == true) {
 		session.setAttribute("toPage", "run");
@@ -41,11 +42,11 @@
 				var confPsw = $('#confermaPsw').val();
 				
 				if(email == '' | psw == '' | confPsw == '') {
-					$('.mess-errore').text("Compilare tutti i campi");
+					alert('Compilare tutti i campi');
 				}
 				else {
 					if(psw != confPsw) {					
-						$('.mess-errore').text("Le password non corrispondono");
+						alert('Le password non corrispondono');
 					}
 					else {
 						var url = "/Incremental/eseguiregistra?email=" + email + "&psw=" +psw;
@@ -82,7 +83,10 @@
   			<input type="email" maxlength="50" id="email" placeholder="Username" class="input-base"> 
   			<input type="password" id="psw" placeholder="Password" class="input-base"> 
   			<input type="password" id="confermaPsw" placeholder="Conferma Password" class="input-base"> 
-  			<p class="mess-errore"><% if(messaggio != null) { %>  <%= messaggio %> <% session.setAttribute(Costanti.ATTR_MSG, null); } %>  </p>
+  			<% if(messaggio != null) { %>
+					<p class="messaggio" style="color:<%= messaggio.getColore() %>">  <%= messaggio.getMsg() %>   </p>
+  			<% 		session.setAttribute(Costanti.ATTR_MSG, null); 
+ 				} %>
   			<a class="a-base" id="buttonRegistra">Registra</a>
   		</div>
 
