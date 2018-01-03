@@ -1,12 +1,13 @@
 ------------------ DA FARE -------------------
 
-
+Struttura del gioco
 
 
 
 ------------------ FATTO -------------------
 
-03/01/18 Miglioare gestione redirect servlet
+03/01/18 Migliorare gestione redirect servlet
+03/01/18 DWR Aggiornate e funzionanti
 
 02/01/18 Sistemare registrazione
 02/01/18 Cambiare attributo "email" (tab utente) in "username")
