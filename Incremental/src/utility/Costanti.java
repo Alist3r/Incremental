@@ -7,6 +7,7 @@ public class Costanti {
 	
 	public static final String ATTR_LOGGATO = "loggato";
 	public static final String ATTR_UTENTE = "utente";
+	public static final String ATTR_PARAM_LIST = "param_list";
 	public static final String ATTR_VIRTUS = "virtus";
 	public static final String ATTR_MSG = "messaggio";
 	
