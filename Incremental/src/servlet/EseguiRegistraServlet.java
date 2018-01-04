@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.jasypt.util.password.BasicPasswordEncryptor;
 
 import dao.UtenteDao;
+import dao.VirtusDao;
 import oggetti.utili.Messaggio;
 import utility.Costanti;
 
@@ -30,7 +31,7 @@ public class EseguiRegistraServlet extends BaseServlet {
 		String username = request.getParameter("email");
 		String psw = request.getParameter("psw");
 		
-		UtenteDao utenteDao;
+		
 		String usernameTrovato = null;
 		
 		//Crypt della password
@@ -38,15 +39,14 @@ public class EseguiRegistraServlet extends BaseServlet {
 		String encryptedPassword = passwordEncryptor.encryptPassword(psw);
 		
 		try {
-			utenteDao = new UtenteDao();
+			UtenteDao utenteDao = new UtenteDao();
 			usernameTrovato = utenteDao.trovaUsername(username); //Verifico se l'username è stato già utilizzato
 			
-			if (usernameTrovato != null) { //Se trovo un username uguale nel DB
+			if (usernameTrovato != null)  //Se trovo un username uguale nel DB
 				registrato = 2;
-			}
-			else {
-				registrato = utenteDao.inserisciUtente(username,encryptedPassword); //Altrimenti eseguo l'inserimeonto dei dati sul DB
-			}
+			
+			else 
+				registrato = utenteDao.inserisciUtente(username,encryptedPassword); //Altrimenti eseguo l'inserimeonto dei dati sul DB dell'utente			
 		}
 		catch (ClassNotFoundException | SQLException e) {
 			registrato = 0;
@@ -56,6 +56,17 @@ public class EseguiRegistraServlet extends BaseServlet {
 		String toPage = "";
 		Messaggio msg;
 		if (registrato == 1) { //Se la registrazione è andata a buon fine
+			
+			//Inserisco virtus di default
+			try {
+				UtenteDao utenteDao = new UtenteDao();
+				int idUtente = utenteDao.getIdDaUsername(username);
+				VirtusDao virtusDao = new VirtusDao();
+				virtusDao.inserisciVirtusDefault(idUtente);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}			
+			
 			toPage = "home";
 			msg = new Messaggio("Registrazione Effettuata", Costanti.COLOR_VERDE);		
 		}

@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.jasypt.util.password.BasicPasswordEncryptor;
 
 import dao.UtenteDao;
-import oggetti.Utente;
+import dao.VirtusDao;
+import oggetti.*;
 import oggetti.utili.Messaggio;
 import utility.Costanti;
 
@@ -28,10 +30,12 @@ public class LoginServlet extends BaseServlet {
 		
 		UtenteDao utenteDao;
 		Utente utente = null;
+		
 		try {
 			//carico il dao e provo a cercare la combinazione email + password
 			utenteDao = new UtenteDao();
-			utente = utenteDao.getDaUsername(username);
+			utente = utenteDao.getUtenteDaUsername(username);
+			
 					
 		}  
 		catch (ClassNotFoundException | SQLException e) {
@@ -45,8 +49,20 @@ public class LoginServlet extends BaseServlet {
 		if (utente != null && passwordEncryptor.checkPassword(psw, utente.getPassword())) {
 			//se l'oggetto utente non è null allora ho trovato la combinazione di parametri e quindi eseguo il login
 			loggato = true;
+			
+			
+			ArrayList<Virtus> listaVirtus = new ArrayList<Virtus>();
+			try {
+				VirtusDao virtusDao = new VirtusDao();
+				listaVirtus = virtusDao.getVirtusUtente(utente.getIdUtente());
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
+			
+			
 			request.getSession().setAttribute(Costanti.ATTR_LOGGATO, loggato);
 			request.getSession().setAttribute(Costanti.ATTR_UTENTE, utente);
+			request.getSession().setAttribute(Costanti.ATTR_VIRTUS, listaVirtus);
 			toPage = "run";
 		}
 		else {

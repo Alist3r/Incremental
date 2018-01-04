@@ -43,7 +43,7 @@ public class UtenteDao extends BaseDao {
 		
 	}
 	
-	public Utente getDaUsername(String username) throws ClassNotFoundException, SQLException
+	public Utente getUtenteDaUsername(String username) throws ClassNotFoundException, SQLException
 	{
 		Utente account = null;
 		getConnection();
@@ -70,6 +70,28 @@ public class UtenteDao extends BaseDao {
 		connection.close(); 
 		
 		return account;
+		
+	}
+	
+	public int getIdDaUsername(String username) throws ClassNotFoundException, SQLException {
+		
+		int idTrovato = -1;
+		getConnection();
+		
+		String 	query  = "SELECT idUtente FROM utente ";
+		query += "WHERE username='" + username + "'";
+		
+		Statement statement = connection.createStatement();
+		ResultSet result=statement.executeQuery(query);
+		
+		if (result.next()) {
+			idTrovato = result.getInt("idUtente");
+		}
+		
+		statement.close();
+		connection.close();
+		
+		return idTrovato;
 		
 	}
 	
