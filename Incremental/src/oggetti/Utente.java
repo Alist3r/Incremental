@@ -6,10 +6,11 @@ public class Utente implements Serializable{
 	
 	private static final long serialVersionUID = -6712649409791035393L;
 	
-	private int idUtente = 0;
+	private int 	idUtente = 0;
 	private String 	username = "";
 	private String 	password = "";
 	private int 	tempoGioco = 0;
+	private String 	nomePg;
 	
 	public Utente() {
 	}	

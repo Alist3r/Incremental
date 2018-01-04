@@ -11,4 +11,17 @@ public class Costanti {
 	
 	public static final String COLOR_VERDE = "#00cc0a";
 	public static final String COLOR_ROSSO = "#e70000";
+	
+	public static final int VIRTUS_ID_CORAGGIO = 1;
+	public static final int VIRTUS_ID_ASTUZIA = 2;
+	public static final int VIRTUS_ID_LEALTA = 3;
+	public static final int VIRTUS_ID_FEDE = 4;
+	public static final int VIRTUS_ID_VIGORE = 5;
+	public static final int VIRTUS_ID_PRUDENZA = 6;
+	public static final int VIRTUS_ID_SPERANZA = 7;
+	public static final int VIRTUS_ID_GIUSTIZIA = 8;
+	public static final int VIRTUS_ID_PERSEVERANZA = 9;
+	public static final int VIRTUS_ID_IRA = 10;
+	public static final int VIRTUS_ID_VOLONTA = 11;
+	
 }
