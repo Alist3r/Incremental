@@ -21,19 +21,26 @@ public final class Procedure {
 		return urlCompleto;	
 	}
 	
-	public static HashMap<String, Object> caricaDatiUtente(int idUtente) {
+	public static ArrayList<Virtus> caricaListaVirtus(int idUtente) {
 		
-		HashMap<String, Object> parametriSession = new HashMap<String, Object>();
 		ArrayList<Virtus> listaVirtus = new ArrayList<Virtus>();
 		
 		try {
-			//CaricaVirtus
 			VirtusDao virtusDao = new VirtusDao();
 			listaVirtus = virtusDao.getVirtusUtente(idUtente);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
 		
+		return listaVirtus;
+	}
+	
+	public static HashMap<String, Object> caricaDatiUtente(int idUtente) {
+		
+		HashMap<String, Object> parametriSession = new HashMap<String, Object>();		
+		
+		ArrayList<Virtus> listaVirtus = caricaListaVirtus(idUtente);
+			
 		parametriSession.put(Costanti.ATTR_VIRTUS, listaVirtus);
 		
 		return parametriSession;

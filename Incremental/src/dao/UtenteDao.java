@@ -29,7 +29,6 @@ public class UtenteDao extends BaseDao {
 		try {
 			statement.executeUpdate(query);
 			statement.close();
-			statement.close();
 			connection.close(); 
 			esito = 1;
 		}
@@ -82,7 +81,7 @@ public class UtenteDao extends BaseDao {
 		query += "WHERE username='" + username + "'";
 		
 		Statement statement = connection.createStatement();
-		ResultSet result=statement.executeQuery(query);
+		ResultSet result = statement.executeQuery(query);
 		
 		if (result.next()) {
 			idTrovato = result.getInt("idUtente");

@@ -46,6 +46,13 @@ public class Utente implements Serializable{
 	public void setTempoGioco(int tempoGioco) {
 		this.tempoGioco = tempoGioco;
 	}
-		
+
+	public String getNomePg() {
+		return nomePg;
+	}
+
+	public void setNomePg(String nomePg) {
+		this.nomePg = nomePg;
+	}
 	
 }

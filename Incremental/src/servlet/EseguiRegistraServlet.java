@@ -27,17 +27,13 @@ public class EseguiRegistraServlet extends BaseServlet {
 		 */
 		int registrato = 0;
 		
-		//Prendo i parametri dalla request
-		String username = request.getParameter("email");
+		String username = request.getParameter("email"); //Prendo i parametri dalla request
 		String psw = request.getParameter("psw");
-		
-		
-		String usernameTrovato = null;
-		
-		//Crypt della password
-		BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor();
+				
+		BasicPasswordEncryptor passwordEncryptor = new BasicPasswordEncryptor(); //Crypt della password
 		String encryptedPassword = passwordEncryptor.encryptPassword(psw);
-		
+			
+		String usernameTrovato = null;
 		try {
 			UtenteDao utenteDao = new UtenteDao();
 			usernameTrovato = utenteDao.trovaUsername(username); //Verifico se l'username è stato già utilizzato
