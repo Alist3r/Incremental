@@ -63,6 +63,30 @@ public class UtenteDao extends BaseDao {
 			account.setIdUtente(result.getInt("idUtente"));
 			account.setUsername(result.getString("username"));
 			account.setPassword(result.getString("password"));
+			
+			account.setPvMax(result.getInt("pvMax"));
+			account.setPvAttuali(result.getInt("pvAttuali"));
+			account.setPvBonus(result.getInt("pvBonus"));
+			
+			account.setPaMax(result.getInt("paMax"));
+			account.setPaAttuali(result.getInt("paAttuali"));
+			account.setPaBonus(result.getInt("paBonus"));
+			
+			account.setResistenza(result.getInt("resistenza"));
+			account.setResistenzaBonus(result.getInt("resistenzaBonus"));
+			
+			account.setChanceCrit(result.getInt("chanceCrit"));
+			account.setChanceCritBonus(result.getInt("chanceCritBonus"));
+			
+			account.setDannoCrit(result.getInt("dannoCrit"));
+			account.setDannoCritBonus(result.getInt("dannoCritBonus"));
+			
+			account.setEvasione(result.getInt("evasione"));
+			account.setEvasioneBonus(result.getInt("evasioneBonus"));
+			
+			account.setPrecisione(result.getInt("precisione"));
+			account.setPrecisioneBonus(result.getInt("precisioneBonus"));
+			
 		}
 		
 		statement.close();

@@ -48,8 +48,12 @@
   		<jsp:include page="header/header.jsp"></jsp:include>
   		<table class="table-main-container">
   			<tr>
-  				<td style="width:20%"> 					
-  					<jsp:include page="colonna-sinistra/elenco-virtus.jsp"></jsp:include> 				
+  				<td style="width:20%"> 		
+  							
+					<jsp:include page="colonna-sinistra/elenco-stats.jsp"></jsp:include> 
+  					<br>
+  					<jsp:include page="colonna-sinistra/elenco-virtus.jsp"></jsp:include>
+  									
   				</td>
   				<td class="td-main-panel"> ciao </td>
   				<td style="width:20%"> ciao </td>

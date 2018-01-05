@@ -29,8 +29,7 @@
 	<table class="table-lista-virtus">
 		<thead>
 			<tr>
-			 <td class="virtus-header"> LE TUE VIRTUS  </td>
-			 <td></td>
+			 <td colspan="2" style="width: 200px"> LE TUE VIRTUS  </td>
 			</tr>		
 		</thead>
 		
