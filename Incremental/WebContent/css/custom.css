@@ -1,6 +1,7 @@
 body {
 	margin: 0;
 	width: 1920px;
+	height: 860px;
 }
 
 body,input {
@@ -12,13 +13,20 @@ body,input {
 .div-container-header {
 	width: 100%;
 	border: 1px  black;
+	height: 30px;
+	background-color: #5c5c5c;
+}
 
+.table-header {
+	height: 100%
 }
 
 .table-header td {
+	text-color: #000;
 	padding-left: 5px;
 	padding-right: 5px;
 	font-size: 12px;
+	vertical-align: center;
 }
 
 /** FINE HEADER **/
@@ -53,8 +61,71 @@ body,input {
 	font-size: 13px;
 	text-decoration: none;
 	cursor: pointer;
+	color: #fff;
 }
 
 .messaggio {
 	font-size: 13px;
 }
+
+/** RUN PAGE **/
+
+.table-main-container {
+	border: 1px  black;
+	width: 100%;
+	border-collapse: collapse;
+	height: 100%;
+	margin-top: 10px;
+}
+
+.table-main-container td {
+	border: 1px red;
+	padding: 5px;
+	vertical-align: top;
+	font-size: 13px;
+}
+
+.table-main-container .td-main-panel {
+	
+}
+
+/** RUN PAGE - COLONNA SINISTRA **/
+
+.table-lista-virtus {
+	border: 1px  black;
+	border-collapse: collapse;
+}
+
+.table-lista-virtus thead td {
+	
+	font-size: 13px;
+	font-weight: bold;
+	border-bottom: 2px solid #5c5c5c;
+}
+
+.table-lista-virtus td {
+
+	border: 1px black;
+	padding:1px;
+	cursor: default;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

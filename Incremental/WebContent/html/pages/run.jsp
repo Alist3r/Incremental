@@ -10,14 +10,15 @@
 	session = request.getSession();
 
 	Boolean logged = (Boolean) session.getAttribute(Costanti.ATTR_LOGGATO);
-	Utente utente = new Utente();
 	HashMap<String, Object> parametriSession = new HashMap<String, Object>();
 	
+	Utente utente = new Utente();
 	if(logged == null || logged == false) {
 		session.setAttribute("toPage", "home");
 		response.sendRedirect("/Incremental/html/pages/redirect.jsp");
 	}	
 	else {
+		//Se ho effettuato il login, prendo l'oggetto Utente e tutti gli attributi in sessione
 		utente = (Utente) session.getAttribute(Costanti.ATTR_UTENTE);
 		parametriSession = (HashMap<String, Object>) session.getAttribute(Costanti.ATTR_PARAM_LIST);
 	}
@@ -45,13 +46,30 @@
   	<body>
   	
   		<jsp:include page="header/header.jsp"></jsp:include>
-  		<p>Username: <%= utente.getUsername() %> </p>
-  		<% 
-  		ArrayList<Virtus> listaVirtus = (ArrayList<Virtus>) parametriSession.get(Costanti.ATTR_VIRTUS);
-  		for(int i=0; i<11; i++) { %>
+  		<table class="table-main-container">
+  			<tr>
+  				<td style="width:20%"> 
+  					
+  					<jsp:include page="colonna-sinistra/elenco-virtus.jsp"></jsp:include>
+  				
+  				</td>
+  				<td class="td-main-panel"> ciao </td>
+  				<td style="width:20%"> ciao </td>
+  			</tr>
+  		</table>
   		
-  		<p><%= listaVirtus.get(i).getNome() %> > <%= listaVirtus.get(i).getValore() %> </p>
-  		 
-		<% } %>
+  		
+  		
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
    	</body>
 </html>

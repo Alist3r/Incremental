@@ -10,7 +10,6 @@ public class Utente implements Serializable{
 	private String 	username = "";
 	private String 	password = "";
 	private int 	tempoGioco = 0;
-	private String 	nomePg;
 	
 	public Utente() {
 	}	
@@ -45,14 +44,6 @@ public class Utente implements Serializable{
 
 	public void setTempoGioco(int tempoGioco) {
 		this.tempoGioco = tempoGioco;
-	}
-
-	public String getNomePg() {
-		return nomePg;
-	}
-
-	public void setNomePg(String nomePg) {
-		this.nomePg = nomePg;
 	}
 	
 }

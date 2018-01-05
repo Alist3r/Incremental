@@ -22,15 +22,28 @@
 		parametriSession = (HashMap<String, Object>) session.getAttribute(Costanti.ATTR_PARAM_LIST);
 	}
 
-
+	ArrayList<Virtus> listaVirtus = (ArrayList<Virtus>) parametriSession.get(Costanti.ATTR_VIRTUS);
+	
 %>
-
-<div class="div-container-header">
-	<table class="table-header">
-   		<tr>
-   			<td style="border-right: 1px solid white;"><a href="#" class="a-header" style="cursor: default;"><%=utente.getUsername() %></a></td>
-   			<td><a href="/Incremental/logout" class="a-header">Logout</a></td>
-   		</tr>
-   	</table>
-
-</div>
+	
+	<table class="table-lista-virtus">
+		<thead>
+			<tr>
+			 <td class="virtus-header"> LE TUE VIRTUS  </td>
+			 <td></td>
+			</tr>		
+		</thead>
+		
+			<% 
+		for(int i=0; i<11; i++) { %>
+			<tr>
+	  			<td style="width: 150px;">¬ <%= listaVirtus.get(i).getNome() %></td>	 
+	  			<td><%= listaVirtus.get(i).getValore() %> </td>
+  			</tr>
+		<% } %>
+		
+	</table>
+	
+	
+	
+	
