@@ -25,7 +25,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Marck+Script|Yellowtail|Cookie|Damion|Berkshire+Swash" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Marck+Script|Yellowtail|Cookie|Damion|Berkshire+Swash|Rancho" rel="stylesheet">
 	<link href="<%=Costanti.CONTEXT_PATH%>/css/custom.css" rel="stylesheet" media="screen">
     
    	<script type='text/javascript' src='/Incremental/dwr/engine.js'></script>

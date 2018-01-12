@@ -196,6 +196,7 @@ body,input {
 	border: 1px black;
 	padding:1px;
 	cursor: default;
+	vertical-align: bottom;
 }
 
 .table-lista-virtus .td-valore, .table-lista-stats .td-valore {
