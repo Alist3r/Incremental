@@ -19,7 +19,7 @@ public class VirtusDao extends BaseDao {
 		getConnection();
 		Statement statement = connection.createStatement();
 		
-		for(int i=1; i <= 11; i++) {
+		for(int i=1; i <= 5; i++) {
 			String query = "INSERT INTO ha_virtus(idUtente,idVirtus) VALUES(" + idUtente + "," + i +")";
 			
 			try {

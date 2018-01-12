@@ -34,10 +34,10 @@
 		</thead>
 		
 			<% 
-		for(int i=0; i<11; i++) { %>
+		for(int i=0; i<5; i++) { %>
 			<tr>
-	  			<td style="width: 150px;">¬ <%= listaVirtus.get(i).getNome() %></td>	 
-	  			<td><%= listaVirtus.get(i).getValore() %> </td>
+	  			<td style="width: 180px;">¬ <%= listaVirtus.get(i).getNome() %></td>	 
+	  			<td class="td-valore"><%= listaVirtus.get(i).getValore() %> </td>
   			</tr>
 		<% } %>
 		

@@ -25,7 +25,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Marck+Script|Yellowtail" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Marck+Script|Yellowtail|Cookie|Damion" rel="stylesheet">
 	<link href="<%=Costanti.CONTEXT_PATH%>/css/custom.css" rel="stylesheet" media="screen">
     
    	<script type='text/javascript' src='/Incremental/dwr/engine.js'></script>
@@ -79,7 +79,7 @@
    			</table>
 		</div>
   		<div class="div-registrazione">
-  			<p class="corsivo" style="font-size: 25px;margin: 3px;">Lega la tua anima al portale</p>
+  			<p class="corsivo-large" style="margin: 3px;">Lega la tua anima al portale</p>
   			<input type="email" maxlength="50" id="email" placeholder="Username" class="input-base"> 
   			<input type="password" id="psw" placeholder="Password" class="input-base"> 
   			<input type="password" id="confermaPsw" placeholder="Conferma Password" class="input-base"> 

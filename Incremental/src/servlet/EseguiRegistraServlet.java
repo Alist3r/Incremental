@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.jasypt.util.password.BasicPasswordEncryptor;
 
+import dao.StatsbaseDao;
 import dao.UtenteDao;
 import dao.VirtusDao;
 import oggetti.utili.Messaggio;
@@ -57,8 +58,12 @@ public class EseguiRegistraServlet extends BaseServlet {
 			try {
 				UtenteDao utenteDao = new UtenteDao();
 				int idUtente = utenteDao.getIdDaUsername(username);
+				
 				VirtusDao virtusDao = new VirtusDao();
 				virtusDao.inserisciVirtusDefault(idUtente);
+				
+				StatsbaseDao statsDao = new StatsbaseDao();
+				statsDao.inserisciStatsDefault(idUtente);
 			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
 			}			

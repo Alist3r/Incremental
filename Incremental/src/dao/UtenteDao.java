@@ -48,7 +48,7 @@ public class UtenteDao extends BaseDao {
 		getConnection();
 
 		String 	query  = "SELECT * FROM utente ";
-				query += "WHERE username='" + username + "'";
+				query += "WHERE utente.username='" + username + "'";
 
 		Statement statement = connection.createStatement();
 		ResultSet result=statement.executeQuery(query);
@@ -60,33 +60,15 @@ public class UtenteDao extends BaseDao {
 		//setto l'utente da mettere in session
 		if(result.next()) {
 			account = new Utente();
-			account.setIdUtente(result.getInt("idUtente"));
+			account.setIdUtente(result.getInt("utente.idUtente"));
 			account.setUsername(result.getString("username"));
 			account.setPassword(result.getString("password"));
 			
-			account.setPvMax(result.getInt("pvMax"));
-			account.setPvAttuali(result.getInt("pvAttuali"));
-			account.setPvBonus(result.getInt("pvBonus"));
+			query = "SELECT * FROM defstatsutente WHERE idUtente = '" + account.getIdUtente() + "'";
+			statement = connection.createStatement();
+			result = statement.executeQuery(query);
 			
-			account.setPaMax(result.getInt("paMax"));
-			account.setPaAttuali(result.getInt("paAttuali"));
-			account.setPaBonus(result.getInt("paBonus"));
-			
-			account.setResistenza(result.getInt("resistenza"));
-			account.setResistenzaBonus(result.getInt("resistenzaBonus"));
-			
-			account.setChanceCrit(result.getInt("chanceCrit"));
-			account.setChanceCritBonus(result.getInt("chanceCritBonus"));
-			
-			account.setDannoCrit(result.getInt("dannoCrit"));
-			account.setDannoCritBonus(result.getInt("dannoCritBonus"));
-			
-			account.setEvasione(result.getInt("evasione"));
-			account.setEvasioneBonus(result.getInt("evasioneBonus"));
-			
-			account.setPrecisione(result.getInt("precisione"));
-			account.setPrecisioneBonus(result.getInt("precisioneBonus"));
-			
+		
 		}
 		
 		statement.close();

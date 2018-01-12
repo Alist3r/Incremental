@@ -29,16 +29,34 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Marck+Script|Yellowtail" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Marck+Script|Yellowtail|Cookie|Damion" rel="stylesheet">
 	<link href="<%=Costanti.CONTEXT_PATH%>/css/custom.css" rel="stylesheet" media="screen">
+	<link rel="stylesheet" type="text/css" href="<%=Costanti.CONTEXT_PATH%>/css/tooltipster.bundle.min.css" />
+	<link rel="stylesheet" type="text/css" href="<%=Costanti.CONTEXT_PATH%>/css/tooltipster-sideTip-borderless.min.css" />
     
     <script type='text/javascript' src='/Incremental/dwr/engine.js'></script>
   	<script type='text/javascript' src='/Incremental/dwr/interface/CCService.js'></script>
     <script src="http://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/tooltipster.bundle.min.js"></script>
+	
 	
 	
 	<head>
+		 <script>
+	        $(document).ready(function() {
+	        	$('.tooltip').tooltipster({
+	        	    theme: 'tooltipster-customized',
+	        	    delay: 80,
+	        	    side: 'right',
+	        	    distance: -100,
+	        	    animation: 'fade',
+	        	    animationDuration: 150,
+	        	    maxWidth: 200
+	        	});
+	        });
+   		 </script>
+	
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     	<title>Incremental</title> 
 	</head>

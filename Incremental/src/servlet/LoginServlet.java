@@ -51,7 +51,7 @@ public class LoginServlet extends BaseServlet {
 
 			toPage = "run";
 		}
-		else { //altrimento torno nella home senza eseguire il login
+		else { //altrimenti torno nella home senza eseguire il login
 			
 			msg = new Messaggio("Utente non trovato",Costanti.COLOR_ROSSO);
 			request.getSession().setAttribute(Costanti.ATTR_MSG, msg);
