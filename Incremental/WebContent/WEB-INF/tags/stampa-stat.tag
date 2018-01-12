@@ -9,7 +9,8 @@
 			<td class="td-valore"> <%= stat.getValoreTot() %><% if (stat.getIdStatsbase() == Costanti.STAT_ID_CHANCECRIT || stat.getIdStatsbase() == Costanti.STAT_ID_EVASIONE) {%>% <%}%>
 				<div class="tooltip_templates" style="margin-top: 10px; font-size: 16px;">				
 					<span id="tooltip_<%= stat.getIdStatsbase() %>">
-						<span class="corsivo-medium"><%= stat.getDescrizione() %></span><br><br>					
+						<span class="corsivo-medium"><%= stat.getDescrizione() %></span><br><br>	
+						<span style="margin:0 auto; width: 100px; height: 30px; background-color: white;"></span>				
 						<span style="font-style: italic;">~ Base: +<%= stat.getValoreBase() %></span><br>
 						<span style="font-style: italic;">~ Da Equipaggiamento: +<%= stat.getBonusEquip() %></span><br>
 						<span style="font-style: italic;">~ Da Virtus: +<%= stat.getBonusVirtus() %></span><br>

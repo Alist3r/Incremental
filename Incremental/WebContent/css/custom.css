@@ -12,14 +12,14 @@ body,input {
 .tooltip_templates { display: none; }
 
 .tooltipster-sidetip.tooltipster-customized .tooltipster-box {
-	background: #fff;
-	border: 1px solid #5c5c5c;
+	background: #5c5c5c;
+	border: 1px solid #fff;
 	border-radius: 0px;
 	
 }
 
 .tooltipster-sidetip.tooltipster-customized .tooltipster-content {
-	color: #5c5c5c;
+	color: #fff;
 	padding: 8px;
 	font-size: 12px;
 }
@@ -110,7 +110,7 @@ body,input {
 /** FINE HEADER **/
 
 .corsivo, .corsivo-medium, .corsivo-large {
-	font-family: 'Cookie', cursive;
+	font-family: 'Rancho', cursive;
 }
 
 .corsivo-medium {

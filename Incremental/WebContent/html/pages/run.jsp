@@ -29,7 +29,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Marck+Script|Yellowtail|Cookie|Damion" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Marck+Script|Yellowtail|Cookie|Damion|Berkshire+Swash|Satisfy|Niconne|Rancho" rel="stylesheet">
 	<link href="<%=Costanti.CONTEXT_PATH%>/css/custom.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" type="text/css" href="<%=Costanti.CONTEXT_PATH%>/css/tooltipster.bundle.min.css" />
 	<link rel="stylesheet" type="text/css" href="<%=Costanti.CONTEXT_PATH%>/css/tooltipster-sideTip-borderless.min.css" />
@@ -49,10 +49,10 @@
 	        	    theme: 'tooltipster-customized',
 	        	    delay: 80,
 	        	    side: 'right',
-	        	    distance: -100,
+	        	    distance: 5,
 	        	    animation: 'fade',
 	        	    animationDuration: 150,
-	        	    maxWidth: 200
+	        	    maxWidth: 220
 	        	});
 	        });
    		 </script>

@@ -26,44 +26,40 @@
 	
 	ArrayList<Statsbase> listaStats = (ArrayList<Statsbase>) parametriSession.get(Costanti.ATTR_STATS_BASE);
 	
+	Statsbase pv = 			listaStats.get(Costanti.STAT_ID_PV -1);
+	Statsbase energia = 	listaStats.get(Costanti.STAT_ID_ENERGIA -1);
+	Statsbase res = 		listaStats.get(Costanti.STAT_ID_RESISTENZA -1);
+	Statsbase chancecrit = 	listaStats.get(Costanti.STAT_ID_CHANCECRIT -1);
+	Statsbase ffisica = 	listaStats.get(Costanti.STAT_ID_FFISICA -1);
+	Statsbase fmentale = 	listaStats.get(Costanti.STAT_ID_FMENTALE -1);
+	Statsbase evasione = 	listaStats.get(Costanti.STAT_ID_EVASIONE -1);
 %>
 	
 	<table class="table-lista-stats">
 		
 			<tr>
-				<td colspan="2">
-				
-				<%
-				Statsbase pv = 			listaStats.get(Costanti.STAT_ID_PV -1);
-				Statsbase energia = 	listaStats.get(Costanti.STAT_ID_ENERGIA -1);
-				Statsbase res = 		listaStats.get(Costanti.STAT_ID_RESISTENZA -1);
-				Statsbase chancecrit = 	listaStats.get(Costanti.STAT_ID_CHANCECRIT -1);
-				Statsbase ffisica = 	listaStats.get(Costanti.STAT_ID_FFISICA -1);
-				Statsbase fmentale = 	listaStats.get(Costanti.STAT_ID_FMENTALE -1);
-				Statsbase evasione = 	listaStats.get(Costanti.STAT_ID_EVASIONE -1);
-				%>
-				
-				<div class="tooltip" data-tooltip-content="#tooltip_pv" style="margin-top: 10px; font-size: 16px;"> <b>PV <%= pv.getValoreAttuale() %>/<%= pv.getValoreTot() %> </b> </div>
-				
-				<div class="tooltip_templates" style="margin-top: 10px; font-size: 16px;">				
-					<span id="tooltip_pv">
-						<span class="corsivo-medium"><%= pv.getDescrizione() %></span>
-						<br><br>
-						<span style="font-style: italic;">~ Base: +<%= pv.getValoreBase() %></span><br>
-						<span style="font-style: italic;">~ Da Equipaggiamento: +<%= pv.getBonusEquip() %></span><br>
-						<span style="font-style: italic;">~ Da Virtus: +<%= pv.getBonusVirtus() %></span><br>
-						<span style="font-style: italic;">~ Da Abilità: +<%= pv.getBonusAbilita() %></span><br>
-					</span>
-				</div>
-				
-				<div style="border: 1px solid #5c5c5c; width: 200px;height: 5px; margin-bottom: 5px;">
-					<%
-						int percVita = (pv.getValoreAttuale() * 100) / pv.getValoreTot();
-						int width = percVita * 200 / 100;				
-					%>
-					<div style="width:<%= width %>px; background-color: #5c5c5c; height: 100%;"> </div>
-				
-				</div>
+				<td colspan="2">				
+					<div class="tooltip" data-tooltip-content="#tooltip_pv" style="margin-top: 10px; font-size: 16px;"> <b>PV <%= pv.getValoreAttuale() %>/<%= pv.getValoreTot() %> </b> </div>
+					
+					<div class="tooltip_templates" style="margin-top: 10px; font-size: 16px;">				
+						<span id="tooltip_pv">
+							<span class="corsivo-medium"><%= pv.getDescrizione() %></span>
+							<br><br>
+							<span style="font-style: italic;">~ Base: +<%= pv.getValoreBase() %></span><br>
+							<span style="font-style: italic;">~ Da Equipaggiamento: +<%= pv.getBonusEquip() %></span><br>
+							<span style="font-style: italic;">~ Da Virtus: +<%= pv.getBonusVirtus() %></span><br>
+							<span style="font-style: italic;">~ Da Abilità: +<%= pv.getBonusAbilita() %></span><br>
+						</span>
+					</div>
+					
+					<div style="border: 1px solid #5c5c5c; width: 200px;height: 5px; margin-bottom: 5px;">
+						<%
+							int percVita = (pv.getValoreAttuale() * 100) / pv.getValoreTot();
+							int width = percVita * 200 / 100;				
+						%>
+						<div style="width:<%= width %>px; background-color: #5c5c5c; height: 100%;"> </div>
+					
+					</div>
 				</td>
 			</tr>
   			
