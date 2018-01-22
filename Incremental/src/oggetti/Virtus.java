@@ -12,6 +12,8 @@ public class Virtus implements Serializable {
 	private String descrizione;
 	private int idStatsbase1;
 	private int idStatsbase2;
+	private int puntiCrescita;
+	public final int maxPC = 5;
 	
 	public Virtus() {
 		
@@ -77,8 +79,13 @@ public class Virtus implements Serializable {
 	public void setIdStatsbase2(int idStatsbase2) {
 		this.idStatsbase2 = idStatsbase2;
 	}
-	
-	
-	
 
+	public int getPuntiCrescita() {
+		return puntiCrescita;
+	}
+
+	public void setPuntiCrescita(int puntiCrescita) {
+		this.puntiCrescita = puntiCrescita;
+	}
+	
 }

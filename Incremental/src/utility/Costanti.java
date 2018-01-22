@@ -24,6 +24,8 @@ public class Costanti {
 	public static final int STAT_ID_FFISICA = 5;
 	public static final int STAT_ID_FMENTALE = 6;
 	public static final int STAT_ID_EVASIONE = 7;
+	public static final int STAT_ID_PUNTICRESCITA = 8;
+	public static final int STAT_ID_PUNTIABILITA = 9;
 	
 	
 	

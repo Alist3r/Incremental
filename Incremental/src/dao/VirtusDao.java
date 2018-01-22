@@ -39,7 +39,7 @@ public class VirtusDao extends BaseDao {
 		ArrayList<Virtus> listaVirtus = new ArrayList<Virtus>();
 		getConnection();
 		
-		String 	query  = "SELECT virtus.idVirtus as idVirtus, virtus.nome as nome, ha_virtus.valore, virtus.descrizione as descrizione, virtus.idStatsbase1 as stat1,virtus.idStatsbase2 as stat2 FROM virtus, ha_virtus ";
+		String 	query  = "SELECT virtus.idVirtus as idVirtus, virtus.nome as nome, ha_virtus.valore, virtus.descrizione as descrizione, virtus.idStatsbase1 as stat1,virtus.idStatsbase2 as stat2, ha_virtus.puntiCrescita as PC FROM virtus, ha_virtus ";
 		query += "WHERE ha_virtus.idUtente = " + idUtente + " AND virtus.idVirtus = ha_virtus.idVirtus";
 
 		Statement statement = connection.createStatement();
@@ -53,6 +53,7 @@ public class VirtusDao extends BaseDao {
 			virtus.setDescrizione(result.getString("descrizione"));
 			virtus.setIdStatsbase1(result.getInt("stat1"));
 			virtus.setIdStatsbase2(result.getInt("stat2"));
+			virtus.setPuntiCrescita(result.getInt("PC"));
 			listaVirtus.add(virtus);
 		}
 		

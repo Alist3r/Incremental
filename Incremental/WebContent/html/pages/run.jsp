@@ -77,19 +77,6 @@
   				<td style="width:20%"> ciao </td>
   			</tr>
   		</table>
-  		
-  		
-  		
-   	
-   	
-   	
-   	
-   	
-   	
-   	
-   	
-   	
-   	
-   	
+  			
    	</body>
 </html>
