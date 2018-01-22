@@ -1,7 +1,7 @@
 body {
 	margin: 0;
-	width: 1920px;
-	height: 860px;
+	width: 1900px;
+	height: 900px;
 }
 
 body,input {
@@ -162,6 +162,8 @@ body,input {
 	border-collapse: collapse;
 	height: 100%;
 	margin-top: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 .table-main-container td {
@@ -225,7 +227,31 @@ body,input {
 	background-color: #474747;
 }
 
+/** RUN PAGE - CENTRO **/
 
+.div-main {
+	box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 10px 0 14px -4px #a1a1a1, -10px 0 14px -4px #a1a1a1;
+	width: 95%;
+	margin:0 auto;
+	height: 98%;	
+}
+
+.div-main-title {
+	font-style: oblique;
+	text-align: center;
+	margin-top: 30px;
+	font-family: 'Rancho', cursive;
+	font-size: 25px;
+}
+
+.div-main-page {
+	text-align: justify;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: 140px;
+	margin-right: 140px;
+	line-height: 22px;
+}
 
 
 

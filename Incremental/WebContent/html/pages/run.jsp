@@ -73,8 +73,23 @@
   					<jsp:include page="colonna-sinistra/elenco-virtus.jsp"></jsp:include>
   									
   				</td>
-  				<td class="td-main-panel"> ciao </td>
-  				<td style="width:20%"> ciao </td>
+  				<td class="td-main-panel"> 
+  					<div class="div-main">
+  						<div class="div-main-title">Prologo</div>	
+  						<br>
+  						<div class="div-main-page">asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
+  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
+  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
+  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
+  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
+  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
+  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
+  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
+  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd</div>		
+  					</div>
+  				
+  				</td>
+  				<td style="width:20%"> </td>
   			</tr>
   		</table>
   			
