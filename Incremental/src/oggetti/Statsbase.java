@@ -9,6 +9,7 @@ public class Statsbase implements Serializable {
 	private int idStatsbase;
 	private String nome;
 	private String descrizione;
+	private String abbrev;
 	private int valoreBase;
 	private int valoreAttuale;
 	private int bonusEquip;
@@ -82,7 +83,15 @@ public class Statsbase implements Serializable {
 	public void setBonusAbilita(int bonusAbilita) {
 		this.bonusAbilita = bonusAbilita;
 	}
-	
+		
+	public String getAbbrev() {
+		return abbrev;
+	}
+
+	public void setAbbrev(String abbrev) {
+		this.abbrev = abbrev;
+	}
+
 	public int getValoreTot() {
 		return valoreBase + bonusEquip + bonusVirtus + bonusAbilita;
 	}

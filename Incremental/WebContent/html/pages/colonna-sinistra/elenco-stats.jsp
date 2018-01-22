@@ -58,7 +58,9 @@
 		
 			<tr>
 				<td colspan="4">				
-					<div class="tooltip" data-tooltip-content="#tooltip_pv" style="margin-top: 10px; font-size: 16px;"> <b>PV <%= pv.getValoreAttuale() %>/<%= pv.getValoreTot() %> </b> </div>
+					<div class="tooltip" data-tooltip-content="#tooltip_pv" style="margin-top: 10px; font-size: 16px;"> 
+						<b><%= pv.getAbbrev() %> <%= pv.getValoreAttuale() %>/<%= pv.getValoreTot() %> </b> 				
+					</div>
 					
 					<div class="tooltip_templates" style="margin-top: 10px; font-size: 16px;">				
 						<span id="tooltip_pv">
@@ -82,8 +84,8 @@
 				</td>
 			</tr>
   			<tr>
-  				<td class="tooltip" data-tooltip-content="#tooltip_pc" colspan="1" style="width: 25%; text-align: right;font-size:16px;font-weight: bold;"> 
-  				PC
+  				<td class="tooltip td-stats-punti" data-tooltip-content="#tooltip_pc" colspan="1"> 
+  				<%= pc.getAbbrev() %>
   				
   					<div class="tooltip_templates" style="margin-top: 10px; font-size: 16px;">				
 						<span id="tooltip_pc">
@@ -99,8 +101,8 @@
   				<td colspan="1" style="width: 25%;font-size:16px;"> 
   				<%=pc.getValoreTot() %>
   				</td>
-  				<td class="tooltip" data-tooltip-content="#tooltip_pa" colspan="1" style="width: 25%; text-align: right;font-size:16px;font-weight: bold;"> 
-  				PA
+  				<td class="tooltip td-stats-punti" data-tooltip-content="#tooltip_pa" colspan="1"> 
+  				<%= pa.getAbbrev() %>
   				
   					<div class="tooltip_templates" style="margin-top: 10px; font-size: 16px;">				
 						<span id="tooltip_pa">
@@ -117,9 +119,6 @@
   				</td>
   			</tr>
   			
-  			<tr>
-  				
-  			</tr>
 			
   			<tag:stampa-stat stat="<%= energia %>"></tag:stampa-stat>
   			<tag:stampa-stat stat="<%= res %>"></tag:stampa-stat>
