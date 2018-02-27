@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import dao.PaginaDao;
 import dao.StatsbaseDao;
 import dao.VirtusDao;
 import oggetti.Statsbase;
@@ -51,15 +52,31 @@ public final class Procedure {
 		return listaStatsBase;
 	}
 	
+	public static String caricaPagina(int idUtente) {
+		
+		String pagina = ""; 
+		
+		try {
+			PaginaDao paginaDao = new PaginaDao();
+			pagina = paginaDao.getUltimaPagina(idUtente);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return pagina;
+	}
+	
 	public static HashMap<String, Object> caricaDatiUtente(int idUtente) {
 		
 		HashMap<String, Object> parametriSession = new HashMap<String, Object>();		
 		
 		ArrayList<Virtus> listaVirtus = caricaListaVirtus(idUtente);
 		ArrayList<Statsbase> listaStatsbase = caricaListaStatsbase(idUtente);
+		String pagina = caricaPagina(idUtente);
 			
 		parametriSession.put(Costanti.ATTR_VIRTUS, listaVirtus);
 		parametriSession.put(Costanti.ATTR_STATS_BASE, listaStatsbase);
+		parametriSession.put(Costanti.ATTR_PAGINA, pagina);
 		
 		return parametriSession;
 	}

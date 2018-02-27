@@ -45,6 +45,8 @@
 	  				  			
 	  			<div class="tooltip_templates" style="margin-top: 10px; font-size: 16px;">				
 					<span id="tooltip_virtus_<%= virtus.getIdVirtus() %>">
+						<span style="margin-left: 55px;"><img src="images/icone/coraggio.png"></span>
+						<br>
 						<span class="corsivo-medium"><%= virtus.getDescrizione() %></span><br><br>
 						<%
 						String stat1 = listaStats.get(virtus.getIdStatsbase1() -1).getNome();

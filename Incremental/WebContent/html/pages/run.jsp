@@ -11,6 +11,7 @@
 
 	Boolean logged = (Boolean) session.getAttribute(Costanti.ATTR_LOGGATO);
 	HashMap<String, Object> parametriSession = new HashMap<String, Object>();
+	String pagina = "";
 	
 	Utente utente = new Utente();
 	if(logged == null || logged == false) {
@@ -20,8 +21,11 @@
 	else {
 		//Se ho effettuato il login, prendo l'oggetto Utente e tutti gli attributi in sessione
 		utente = (Utente) session.getAttribute(Costanti.ATTR_UTENTE);
-		parametriSession = (HashMap<String, Object>) session.getAttribute(Costanti.ATTR_PARAM_LIST);
+		parametriSession = (HashMap<String, Object>) session.getAttribute(Costanti.ATTR_PARAM_LIST);	
+		
+		pagina = (String) parametriSession.get(Costanti.ATTR_PAGINA);
 	}
+	
 	
 %>
 
@@ -75,17 +79,8 @@
   				</td>
   				<td class="td-main-panel"> 
   					<div class="div-main">
-  						<div class="div-main-title">Prologo</div>	
-  						<br>
-  						<div class="div-main-page">asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
-  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
-  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
-  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
-  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
-  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
-  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
-  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd
-  						asdasdsadassadd asfasdfsaddsdsadssddsdsdasd sdadadadadas sadasdasdsdadasd adasd</div>		
+  						<% String percorsoPagina = "storia/" +  pagina + ".jsp"; %>
+  						<jsp:include page="<%= percorsoPagina %>"></jsp:include> 
   					</div>
   				
   				</td>
