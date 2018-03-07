@@ -70,7 +70,7 @@
   		<jsp:include page="header/header.jsp"></jsp:include>
   		<table class="table-main-container">
   			<tr>
-  				<td style="width:20%"> 		
+  				<td style="width:24%"> 		
   							
 					<jsp:include page="colonna-sinistra/elenco-stats.jsp"></jsp:include> 
   					<br>
@@ -84,7 +84,7 @@
   					</div>
   				
   				</td>
-  				<td style="width:20%"> </td>
+  				<td style="width:24%"><jsp:include page="colonna-destra/dizionario.jsp"></jsp:include>  </td>
   			</tr>
   		</table>
   			

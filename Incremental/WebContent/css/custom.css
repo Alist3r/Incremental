@@ -227,11 +227,40 @@ body,input {
 	background-color: #474747;
 }
 
+/** RUN PAGE - DESTRA **/
+
+.table-dizionario {
+	
+}
+
+.table-dizionario {
+	width: 90%;
+	border-collapse: collapse;
+}
+
+.table-dizionario thead td {
+	text-align: center;
+	font-weight: bold;
+	/** border: 1px solid #b99f4f;
+	border-bottom: 0px transparent;**/
+}
+
+.table-dizionario td {
+	border: 1px  black;
+	width: 100%;
+	font-size: 11px;
+	font-style: oblique;
+	/** background-color: #ffe28b;
+	border: 1px solid #b99f4f;
+	color: #000;
+	border-top: 0px transparent;**/
+}
+
 /** RUN PAGE - CENTRO **/
 
 .div-main {
 	box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 10px 0 14px -4px #a1a1a1, -10px 0 14px -4px #a1a1a1;
-	width: 95%;
+	width: 97%;
 	margin:0 auto;
 	height: 98%;	
 }
@@ -251,6 +280,17 @@ body,input {
 	margin-left: 140px;
 	margin-right: 140px;
 	line-height: 22px;
+}
+
+.div-game-tip {
+	background-color: #ffe28b;
+	border: 1px solid #b99f4f;
+	color: #000;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 40px;
+	padding: 10px;
+	font-size: 12px;
 }
 
 

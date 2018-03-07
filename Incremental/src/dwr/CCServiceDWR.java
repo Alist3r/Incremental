@@ -1,27 +1,23 @@
 package dwr;
 
+import java.sql.SQLException;
+
+import dao.DizionarioDao;
+
 public class CCServiceDWR {
 
-	/*public boolean findUsername(String username) throws SQLException, ClassNotFoundException {
-		UserDao userDao = new UserDao();
-		boolean find = userDao.findUserByUsername(username);
+	
+	public String dizionarioGetDescrizione(String codParola) throws SQLException, ClassNotFoundException {
 		
-		return find;
+		DizionarioDao dizDao = new DizionarioDao();
+		return dizDao.getDescrizione(codParola);
+		
 	}
 	
-	public boolean findEmail(String email) throws SQLException, ClassNotFoundException {
-		UserDao userDao = new UserDao();
-		boolean find = userDao.findUserByEmail(email);
+	public String dizionarioGetParola(String codParola) throws SQLException, ClassNotFoundException {
 		
-		return find;
+		DizionarioDao dizDao = new DizionarioDao();
+		return dizDao.getParola(codParola);
+		
 	}
-	
-	public boolean findUser(String username,String password) throws SQLException, ClassNotFoundException {
-		
-		UserDao userDao = new UserDao();
-		boolean exist = userDao.existUser(username, password); 
-
-		return exist;
-		
-	}*/
 }
