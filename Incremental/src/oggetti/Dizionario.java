@@ -9,7 +9,7 @@ public class Dizionario implements Serializable {
 	private int idDizionario;
 	private String codParola;
 	private int livelloAstuzia;
-	private String nome;
+	private String parola;
 	private String descrizione;
 	
 	public Dizionario() {
@@ -48,12 +48,12 @@ public class Dizionario implements Serializable {
 		this.descrizione = descrizione;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getParola() {
+		return parola;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setParola(String parola) {
+		this.parola = parola;
 	}
 
 	

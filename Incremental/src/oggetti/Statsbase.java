@@ -13,8 +13,7 @@ public class Statsbase implements Serializable {
 	private int valoreBase;
 	private int valoreAttuale;
 	private int bonusEquip;
-	private int bonusVirtus;
-	private int bonusAbilita;
+	private int bonusTalento;
 	
 	public Statsbase() {
 		
@@ -68,20 +67,13 @@ public class Statsbase implements Serializable {
 		this.bonusEquip = bonusEquip;
 	}
 
-	public int getBonusVirtus() {
-		return bonusVirtus;
+
+	public int getBonusTalento() {
+		return bonusTalento;
 	}
 
-	public void setBonusVirtus(int bonusVirtus) {
-		this.bonusVirtus = bonusVirtus;
-	}
-
-	public int getBonusAbilita() {
-		return bonusAbilita;
-	}
-
-	public void setBonusAbilita(int bonusAbilita) {
-		this.bonusAbilita = bonusAbilita;
+	public void setBonusTalento(int bonusTalento) {
+		this.bonusTalento = bonusTalento;
 	}
 		
 	public String getAbbrev() {
@@ -93,7 +85,7 @@ public class Statsbase implements Serializable {
 	}
 
 	public int getValoreTot() {
-		return valoreBase + bonusEquip + bonusVirtus + bonusAbilita;
+		return valoreBase + bonusEquip + bonusTalento;
 	}
 	
 	

@@ -16,8 +16,7 @@
 			</tr>		
 		</thead>
 		<tr>
-	  		<td id="tdDescDizionario"></td>	 
-	  				
+	  		<td id="tdDescDizionario"></td>	 	  				
 	</table>
 	
 	

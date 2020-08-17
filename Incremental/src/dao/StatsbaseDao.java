@@ -42,7 +42,7 @@ public class StatsbaseDao extends BaseDao {
 		ArrayList<Statsbase> listaStats = new ArrayList<Statsbase>();
 		getConnection();
 		
-		String query = "SELECT defstatsutente.idStatsbase as idstat,nome,descrizione,abbrev,valoreBase,valoreAttuale,bonusEquip,bonusVirtus,bonusAbilita FROM statsbase,defstatsutente WHERE ";
+		String query = "SELECT defstatsutente.idStatsbase as idstat,nome,descrizione,abbrev,valoreBase,valoreAttuale,bonusEquip,bonusTalento FROM statsbase,defstatsutente WHERE ";
 				query += " defstatsutente.idUtente = " + idUtente + " AND defstatsutente.idStatsbase = statsbase.idStatsbase";
 
 		Statement statement = connection.createStatement();
@@ -57,8 +57,7 @@ public class StatsbaseDao extends BaseDao {
 			stat.setValoreBase(result.getInt("valoreBase"));
 			stat.setValoreAttuale(result.getInt("valoreAttuale"));
 			stat.setBonusEquip(result.getInt("bonusEquip"));
-			stat.setBonusVirtus(result.getInt("bonusVirtus"));
-			stat.setBonusAbilita(result.getInt("bonusAbilita"));	
+			stat.setBonusTalento(result.getInt("bonusTalento"));	
 			listaStats.add(stat);
 		}
 		

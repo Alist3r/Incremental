@@ -15,7 +15,7 @@ public class VirtusDao extends BaseDao {
 		super();
 	}
 	
-	public void inserisciVirtusDefault(int idUtente) throws ClassNotFoundException, SQLException {
+	/**public void inserisciVirtusDefault(int idUtente) throws ClassNotFoundException, SQLException {
 		getConnection();
 		Statement statement = connection.createStatement();
 		
@@ -46,14 +46,8 @@ public class VirtusDao extends BaseDao {
 		ResultSet result=statement.executeQuery(query);
 
 		while(result.next()) {
-			Virtus virtus = new Virtus();
-			virtus.setIdVirtus(result.getInt("idVirtus"));
-			virtus.setNome(result.getString("nome"));
-			virtus.setValore(result.getInt("valore"));	
-			virtus.setDescrizione(result.getString("descrizione"));
-			virtus.setIdStatsbase1(result.getInt("stat1"));
-			virtus.setIdStatsbase2(result.getInt("stat2"));
-			virtus.setPuntiCrescita(result.getInt("PC"));
+						
+			Virtus virtus = new Virtus(result.getInt("idVirtus"),result.getString("nome"),result.getInt("valore"),result.getString("descrizione"),result.getInt("stat1"),result.getInt("stat2"),result.getInt("PC"));
 			listaVirtus.add(virtus);
 		}
 		
@@ -61,7 +55,7 @@ public class VirtusDao extends BaseDao {
 		connection.close(); 
 
 		return listaVirtus;
-	}
+	}**/
 	
 	
 }

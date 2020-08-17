@@ -14,7 +14,7 @@
 	Utente utente = new Utente();
 	if(logged == null || logged == false) {
 		session.setAttribute("toPage", "home");
-		response.sendRedirect("/Incremental/html/pages/redirect.jsp");
+		response.sendRedirect(Costanti.URL_REDIRECT_PAGE);
 	}	
 	else {
 		//Se ho effettuato il login, prendo l'oggetto Utente e tutti gli attributi in sessione

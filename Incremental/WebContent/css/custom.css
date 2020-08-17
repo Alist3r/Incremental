@@ -12,14 +12,14 @@ body,input {
 .tooltip_templates { display: none; }
 
 .tooltipster-sidetip.tooltipster-customized .tooltipster-box {
-	background: #5c5c5c;
-	border: 1px solid #fff;
+	background: #fff;
+	border: 1px solid #5c5c5c;
 	border-radius: 0px;
 	
 }
 
 .tooltipster-sidetip.tooltipster-customized .tooltipster-content {
-	color: #fff;
+	color: #5c5c5c;
 	padding: 8px;
 	font-size: 12px;
 }
@@ -193,7 +193,7 @@ body,input {
 
 .table-lista-stats .td-stats-punti {
 	width: 25%; 
-	text-align: right;
+	text-align: left;
 	font-size:16px;
 	font-weight: bold;
 }

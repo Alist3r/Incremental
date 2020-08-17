@@ -16,7 +16,7 @@
 		
 	if(logged != null && logged == true) {
 		session.setAttribute("toPage", "run");
-		response.sendRedirect("/Incremental/html/pages/redirect.jsp");	
+		response.sendRedirect(Costanti.URL_REDIRECT_PAGE);	
 	}
 	
 %>

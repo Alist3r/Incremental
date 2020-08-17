@@ -16,7 +16,7 @@
 	Utente utente = new Utente();
 	if(logged == null || logged == false) {
 		session.setAttribute("toPage", "home");
-		response.sendRedirect("/Incremental/html/pages/redirect.jsp");
+		response.sendRedirect(Costanti.URL_REDIRECT_PAGE);
 	}	
 	else {
 		//Se ho effettuato il login, prendo l'oggetto Utente e tutti gli attributi in sessione
@@ -74,7 +74,7 @@
   							
 					<jsp:include page="colonna-sinistra/elenco-stats.jsp"></jsp:include> 
   					<br>
-  					<jsp:include page="colonna-sinistra/elenco-virtus.jsp"></jsp:include>
+  					<!--<jsp:include page="colonna-sinistra/elenco-virtus.jsp"></jsp:include>-->
   									
   				</td>
   				<td class="td-main-panel"> 

@@ -24,7 +24,7 @@ public final class Procedure {
 		return urlCompleto;	
 	}
 	
-	public static ArrayList<Virtus> caricaListaVirtus(int idUtente) {
+	/**public static ArrayList<Virtus> caricaListaVirtus(int idUtente) {
 		
 		ArrayList<Virtus> listaVirtus = new ArrayList<Virtus>();
 		
@@ -36,7 +36,7 @@ public final class Procedure {
 		}
 		
 		return listaVirtus;
-	}
+	}**/
 	
 	public static ArrayList<Statsbase> caricaListaStatsbase(int idUtente) {
 		
@@ -70,11 +70,11 @@ public final class Procedure {
 		
 		HashMap<String, Object> parametriSession = new HashMap<String, Object>();		
 		
-		ArrayList<Virtus> listaVirtus = caricaListaVirtus(idUtente);
+		//ArrayList<Virtus> listaVirtus = caricaListaVirtus(idUtente);
 		ArrayList<Statsbase> listaStatsbase = caricaListaStatsbase(idUtente);
 		String pagina = caricaPagina(idUtente);
 			
-		parametriSession.put(Costanti.ATTR_VIRTUS, listaVirtus);
+		//parametriSession.put(Costanti.ATTR_VIRTUS, listaVirtus);
 		parametriSession.put(Costanti.ATTR_STATS_BASE, listaStatsbase);
 		parametriSession.put(Costanti.ATTR_PAGINA, pagina);
 		

@@ -43,7 +43,7 @@ public class EseguiRegistraServlet extends BaseServlet {
 				registrato = 2;
 			
 			else 
-				registrato = utenteDao.inserisciUtente(username,encryptedPassword); //Altrimenti eseguo l'inserimeonto dei dati sul DB dell'utente			
+				registrato = utenteDao.inserisciUtente(username,encryptedPassword); //Altrimenti eseguo l'inserimento dei dati sul DB dell'utente			
 		}
 		catch (ClassNotFoundException | SQLException e) {
 			registrato = 0;
@@ -54,16 +54,17 @@ public class EseguiRegistraServlet extends BaseServlet {
 		Messaggio msg;
 		if (registrato == 1) { //Se la registrazione è andata a buon fine
 			
-			//Inserisco virtus di default
+			//Inserisco virtus e stats di default
 			try {
 				UtenteDao utenteDao = new UtenteDao();
 				int idUtente = utenteDao.getIdDaUsername(username);
 				
 				VirtusDao virtusDao = new VirtusDao();
-				virtusDao.inserisciVirtusDefault(idUtente);
+				//virtusDao.inserisciVirtusDefault(idUtente);
 				
 				StatsbaseDao statsDao = new StatsbaseDao();
 				statsDao.inserisciStatsDefault(idUtente);
+				
 			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
 			}			

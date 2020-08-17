@@ -25,7 +25,7 @@ public class PaginaDao extends BaseDao {
 		if(!result.next()) {
 			String query2 = "INSERT INTO ultimapagina(idUtente, idPagina) VALUES (" + idUtente + ",1)";
 			statement.executeUpdate(query2);
-			percorso = "prologo/prologo-1";
+			percorso = "capitolo-1";
 		}
 		else {
 			percorso = result.getString("percorso");
