@@ -43,24 +43,22 @@
 	        		$('#tdParolaDizionario').html(parola);
 	        		$('#tdDescDizionario').html(desc);
 	        		
-	        		$('#tableDizionario').show('slide',500);
-	        		
-	       
-	        		
-			
+	        		$('#tableDizionario').show('slide',500);			
 		        });
-	        });	        
-	        
-			$(document).ready(function () {
-				$('#to485').click(function () {				
-					var url = "/Incremental/game?toPage=capitolo-485"
-		            //window.location.href = url;
-		            alert('url')
+	        	
+				$('#to1').click(function () {	
+	        		
+	        		id = jQuery(this).attr("id");
+					numeroCapitolo = document.getElementById(''+id).innerText
+					var url = "/Incremental/run?<%= Costanti.ATTR_CAPITOLO%>=" + numeroCapitolo;					
+		            window.location.href = url;
+		            
 		            return false;
 					
 				});	
-				
-			});		
+	        });	        
+	        
+	      		
 		
 </script>
 
@@ -73,7 +71,7 @@
 <br>
 <div class="div-main-page">
 	
-	
+	Vai al capitolo <span id="to1" class="span-to-cap">1</span>.
 	<!--  <div class="tooltip_templates" style="margin-top: 10px; font-size: 16px;">				
 		<span id="idDiz">
 				

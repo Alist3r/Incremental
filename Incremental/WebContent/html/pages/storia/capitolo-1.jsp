@@ -6,12 +6,11 @@
 <!DOCTYPE html>
 
 <script type='text/javascript' src='/Incremental/dwr/engine.js'></script>
-  	<script type='text/javascript' src='/Incremental/dwr/interface/CCService.js'></script>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/tooltipster.bundle.min.js"></script>
-
+<script type='text/javascript' src='/Incremental/dwr/interface/CCService.js'></script>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/tooltipster.bundle.min.js"></script>
 
 
 <script>
@@ -42,25 +41,21 @@
 	        		
 	        		$('#tdParolaDizionario').html(parola);
 	        		$('#tdDescDizionario').html(desc);
-	        		
 	        		$('#tableDizionario').show('slide',500);
-	        		
-	       
-	        		
-			
 		        });
-	        });	        
-	        
-			$(document).ready(function () {
-				$('#to485').click(function () {				
-					var url = "/game?toPage=capitolo-485"
-		            window.location.href = url;
-		            //alert('url')
+	        	
+	        	$('#to485').click(function () {	
+	        		
+	        		id = jQuery(this).attr("id");
+					numeroCapitolo = document.getElementById(''+id).innerText
+					var url = "/Incremental/run?<%= Costanti.ATTR_CAPITOLO%>=" + numeroCapitolo;
+		            window.location.href = url;		            
 		            return false;
 					
 				});	
-				
-			});		
+	        });	        
+	        
+	
 		
 </script>
 
@@ -72,7 +67,7 @@
 <div class="div-main-title">Prologo</div>	
 <br>
 <div class="div-main-page">
-	Vai al capitolo <span id="to485" style="color:red;">485</span>.
+	Vai al capitolo <span class="span-to-cap" id="to485">485</span>.
 	
 	<!--  <div class="tooltip_templates" style="margin-top: 10px; font-size: 16px;">				
 		<span id="idDiz">

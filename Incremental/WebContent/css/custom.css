@@ -293,6 +293,12 @@ body,input {
 	font-size: 12px;
 }
 
+.span-to-cap {
+	color: red;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 
 
 

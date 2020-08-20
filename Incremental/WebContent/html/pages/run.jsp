@@ -11,7 +11,7 @@
 
 	Boolean logged = (Boolean) session.getAttribute(Costanti.ATTR_LOGGATO);
 	HashMap<String, Object> parametriSession = new HashMap<String, Object>();
-	String pagina = "";
+	String capitolo = "";
 	
 	Utente utente = new Utente();
 	if(logged == null || logged == false) {
@@ -21,9 +21,8 @@
 	else {
 		//Se ho effettuato il login, prendo l'oggetto Utente e tutti gli attributi in sessione
 		utente = (Utente) session.getAttribute(Costanti.ATTR_UTENTE);
-		parametriSession = (HashMap<String, Object>) session.getAttribute(Costanti.ATTR_PARAM_LIST);	
-		
-		pagina = (String) parametriSession.get(Costanti.ATTR_PAGINA);
+		parametriSession = (HashMap<String, Object>) session.getAttribute(Costanti.ATTR_PARAM_LIST);			
+		capitolo = (String) session.getAttribute(Costanti.ATTR_CAPITOLO);
 	}
 	
 	
@@ -79,8 +78,8 @@
   				</td>
   				<td class="td-main-panel"> 
   					<div class="div-main">
-  						<% String percorsoPagina = "storia/" +  pagina + ".jsp"; %>
-  						<jsp:include page="<%= percorsoPagina %>"></jsp:include> 
+  						<% String percorsoCapitolo = "storia/" +  capitolo + ".jsp"; %>
+  						<jsp:include page="<%= percorsoCapitolo %>"></jsp:include> 
   					</div>
   				
   				</td>

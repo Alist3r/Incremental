@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,14 +13,24 @@ import utility.Procedure;
 @SuppressWarnings("serial")
 public abstract class BaseServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		performTask(request, response);
+		try {
+			performTask(request, response);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		performTask(request, response);
+		try {
+			performTask(request, response);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
-	protected abstract void performTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+	protected abstract void performTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException;
 	
 	protected void toRedirectPage(HttpServletRequest request, HttpServletResponse response, String toPage ) throws ServletException, IOException {
 		

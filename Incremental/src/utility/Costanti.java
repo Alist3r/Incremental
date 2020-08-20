@@ -14,8 +14,7 @@ public class Costanti {
 	public static final String ATTR_MSG = "messaggio";
 	
 	public static final String ATTR_STATS_BASE = "statsbase";
-	public static final String ATTR_VIRTUS = "virtus";
-	public static final String ATTR_PAGINA = "attr_pagina";
+	public static final String ATTR_CAPITOLO = "attr_capitolo";
 	
 	public static final String COLOR_VERDE = "#00cc0a";
 	public static final String COLOR_ROSSO = "#e70000";

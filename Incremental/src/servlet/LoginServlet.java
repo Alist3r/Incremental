@@ -45,8 +45,10 @@ public class LoginServlet extends BaseServlet {
 			loggato = true;
 			HashMap<String, Object> parametriSession = Procedure.caricaDatiUtente(utente.getIdUtente()); //Carico i dati necessari associati all'utente in un hashmap
 			
-			 //Carico quello che mi server nella session
+			String capitolo = Procedure.caricaCapitolo(utente.getIdUtente());
+			 //Carico quello che mi serve nella session
 			request.getSession().setAttribute(Costanti.ATTR_UTENTE, utente);
+			request.getSession().setAttribute(Costanti.ATTR_CAPITOLO, capitolo);
 			request.getSession().setAttribute(Costanti.ATTR_PARAM_LIST, parametriSession);
 
 			toPage = "run";
